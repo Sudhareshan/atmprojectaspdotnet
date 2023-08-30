@@ -1,0 +1,78 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Custmoer.master.cs" Inherits="ATM_Antra.Custmoer" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Bank</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        .Copyright{
+            align-content:center;
+            align-items:center;
+            text-align:center;
+            font-size:x-large;
+        }
+        .PageContent{
+            background-color:Highlight;
+            color:white;
+            width:210px;
+            height:30px;
+
+        }
+        .PageContent:hover{
+            width:350px;
+            height:45px;
+            
+        }
+        #Btndiv{
+            height:45px;
+            align-items:center;
+            display:flex;
+        }
+    </style>
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <img src="Images/money2.jpg" height="300" width="1300"/>
+            <div id="Btndiv">
+                <asp:Button runat="server"   Text="Deposit" ID="btnDeposit" CssClass="PageContent" PostBackUrl="~/Deposit.aspx"/>
+                <asp:Button runat="server"  Text="Withdraw" ID="btnWithdraw" CssClass="PageContent" PostBackUrl="~/Withdraw.aspx" />
+                <asp:Button  runat="server" Text="Mini Statement" ID="btnMini" CssClass="PageContent" PostBackUrl="~/MiniStatement.aspx"/>
+                <asp:Button runat="server" Text="Change Password" ID="btnChangPwd" CssClass="PageContent" PostBackUrl="~/ChangePassword.aspx" />
+                <asp:Button runat="server" Text="Balance" ID="btnBalns" CssClass="PageContent"  PostBackUrl="~/Show_Balance.aspx"/>
+                <asp:Button runat="server" Text="Logout" ID="btnLogout" CssClass="PageContent"    OnClientClick="return confirm('are u sure to logout');" OnClick="btnLogout_Click"  />
+            </div>
+        </div>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="Copyright">
+            <p><strong>©Copyright 2023,All rights reserved.Antra Info Tech</strong></p>
+        </div>
+    </form>
+   <%--  <script>
+
+         function Display() {
+             
+             var msg;
+             let isConfirm = confirm("Do You want Logout");
+
+             debugger;
+             if (isConfirm) {
+                 debugger;
+                 window.location.replace("/Login.aspx");
+                 // window.location.pathname = "/Login";
+             }
+             else {
+                 msg = "You in MainPage";
+             }
+         }
+     </script>--%>
+</body>
+</html>
